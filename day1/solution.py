@@ -24,12 +24,7 @@ with open("input.txt") as file:
             count += (dial + num) // 100
             dial = (dial + num) % 100
         else:
-            # Apply the function 0 → 0
-            #                    n → 100 - n
-            if (dial != 0):
-                count += (100 - dial + num) // 100
-            else:
-                count += num // 100
+            count += ((100 - dial) % 100 + num) // 100
             dial = (dial - num) % 100
 
 print(f"Using method 0x434C49434B, the password is {count}")
